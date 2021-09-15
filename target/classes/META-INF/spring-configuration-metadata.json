@@ -1,0 +1,58 @@
+{
+  "groups": [
+    {
+      "name": "blog",
+      "type": "com.henryece.model.Blog",
+      "sourceType": "com.henryece.model.Blog"
+    },
+    {
+      "name": "droid",
+      "type": "com.henryece.model.Droid",
+      "sourceType": "com.henryece.SpringBootUpAndRunningApplication",
+      "sourceMethod": "createDroid()"
+    },
+    {
+      "name": "greeting",
+      "type": "com.henryece.model.Greeting",
+      "sourceType": "com.henryece.model.Greeting"
+    }
+  ],
+  "properties": [
+    {
+      "name": "blog.blog",
+      "type": "java.lang.String",
+      "sourceType": "com.henryece.model.Blog"
+    },
+    {
+      "name": "blog.comment",
+      "type": "java.lang.String",
+      "sourceType": "com.henryece.model.Blog"
+    },
+    {
+      "name": "blog.id",
+      "type": "java.lang.String",
+      "sourceType": "com.henryece.model.Blog"
+    },
+    {
+      "name": "droid.description",
+      "type": "java.lang.String",
+      "sourceType": "com.henryece.model.Droid"
+    },
+    {
+      "name": "droid.id",
+      "type": "java.lang.String",
+      "sourceType": "com.henryece.model.Droid"
+    },
+    {
+      "name": "greeting.coffee",
+      "type": "java.lang.String",
+      "sourceType": "com.henryece.model.Greeting"
+    },
+    {
+      "name": "greeting.name",
+      "type": "java.lang.String",
+      "sourceType": "com.henryece.model.Greeting"
+    }
+  ],
+  "hints": []
+}
