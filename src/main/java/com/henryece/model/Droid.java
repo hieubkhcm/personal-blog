@@ -2,7 +2,7 @@ package com.henryece.model;
 
 import java.util.UUID;
 
-//@Entity
+//@Entity //Do not know why but can not mapping this class to database
 public class Droid {
 //	@Id
 	private String id, description;
