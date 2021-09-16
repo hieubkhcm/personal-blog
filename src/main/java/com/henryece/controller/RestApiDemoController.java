@@ -20,58 +20,58 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.henryece.model.Coffee;
-import com.henryece.repository.CoffeeRepository;
+import com.henryece.model.Post;
+import com.henryece.repository.PostRepository;
 
-//Here is the Controller for coffee
+//Here is the Controller for Post
 @RestController
-@RequestMapping("/coffees") //<--- This is not necessary, mapping to nowhere
+@RequestMapping("/Posts") //<--- This is not necessary, mapping to nowhere
 public class RestApiDemoController {
 	private static final Logger LOGGER = LogManager.getLogger(RestApiDemoController.class.getName());
 	//private static final Logger LOGGER = LogManager.getLogger(SpringBootUpAndRunningApplication.class.getName());
 	//LOGGER.info("[HENRY-LOG] - This is main()\n");
 
-	private final CoffeeRepository coffeeRepository;
+	private final PostRepository PostRepository;
 	@Autowired // <-- will be auto added by Soring 4.3 or above if class has only one constructor
-	public RestApiDemoController(CoffeeRepository coffeeRepository) {
+	public RestApiDemoController(PostRepository PostRepository) {
 		LOGGER.info("[HENRY-LOG] - RestApiDemoController Constructor called!\n");
-		this.coffeeRepository = coffeeRepository;
+		this.PostRepository = PostRepository;
 	}
 
-	//@RequestMapping(value = "/mycoffees", method = RequestMethod.GET) <-- these two annotations are equivalent
+	//@RequestMapping(value = "/myPosts", method = RequestMethod.GET) <-- these two annotations are equivalent
 	@GetMapping // <=> @GetMapping("") but not equal to @GetMapping("\") 
-	Iterable<Coffee> getCoffees(){
-		LOGGER.info("[HENRY-LOG] - getCoffees called!\n");
-		return coffeeRepository.findAll();
+	Iterable<Post> getPosts(){
+		LOGGER.info("[HENRY-LOG] - getPosts called!\n");
+		return PostRepository.findAll();
 	}
 
 	@GetMapping("/{id}")
-	Optional<Coffee> getCoffeeById(@PathVariable String id){
-		LOGGER.info("[HENRY-LOG] - getCoffeeById called!\n");
-		return coffeeRepository.findById(id);
+	Optional<Post> getPostById(@PathVariable String id){
+		LOGGER.info("[HENRY-LOG] - getPostById called!\n");
+		return PostRepository.findById(id);
 	}
 
 	@PostMapping("") // <=> @PostMapping("") but not equal to @PostMapping("\") 
-	Coffee postCoffee(@RequestBody Coffee coffee) {
-		LOGGER.info("[HENRY-LOG] - postCoffee called!\n");
-		return coffeeRepository.save(coffee);
+	Post postPost(@RequestBody Post Post) {
+		LOGGER.info("[HENRY-LOG] - postPost called!\n");
+		return PostRepository.save(Post);
 	}
 
 	@PutMapping("/{id}")
-	ResponseEntity<Coffee> putCoffee(@PathVariable String id, @RequestBody Coffee coffee) {
-		LOGGER.info("[HENRY-LOG] - putCoffee called!\n");
-		return (!coffeeRepository.existsById(id))
-				? new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.CREATED)
-				: new ResponseEntity<>(coffeeRepository.save(coffee), HttpStatus.OK);
-		//explanation: If id is not found in the list of coffees, create new instance by calling postCoffee()
-		//postOffice will return coffee, in both cases coffee will be return anyway
+	ResponseEntity<Post> putPost(@PathVariable String id, @RequestBody Post Post) {
+		LOGGER.info("[HENRY-LOG] - putPost called!\n");
+		return (!PostRepository.existsById(id))
+				? new ResponseEntity<>(PostRepository.save(Post), HttpStatus.CREATED)
+				: new ResponseEntity<>(PostRepository.save(Post), HttpStatus.OK);
+		//explanation: If id is not found in the list of Posts, create new instance by calling postPost()
+		//postOffice will return Post, in both cases Post will be return anyway
 	}
 
 	@DeleteMapping("/{id}")
-	void deleteCoffee(@PathVariable String id){
-		LOGGER.info("[HENRY-LOG] - deleteCoffee called!\n");
+	void deletePost(@PathVariable String id){
+		LOGGER.info("[HENRY-LOG] - deletePost called!\n");
 		//boolean val = c->c.getId().equals(id);
-		coffeeRepository.deleteById(id);
+		PostRepository.deleteById(id);
 		}
 }
 

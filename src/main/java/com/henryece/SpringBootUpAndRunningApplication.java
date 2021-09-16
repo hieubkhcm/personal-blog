@@ -21,5 +21,3 @@ public class SpringBootUpAndRunningApplication {
 	}
 	
 }
-
-//moved model to a seperated package to easy import/export
