@@ -4,11 +4,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.boot.context.properties.ConfigurationPropertiesScan;
-import org.springframework.context.annotation.Bean;
 
-import com.henryece.model.Droid;
 
 @SpringBootApplication
 @ConfigurationPropertiesScan
@@ -23,15 +20,6 @@ public class SpringBootUpAndRunningApplication {
 		LOGGER.info("[HENRY-LOG] - main() END!\n");
 	}
 	
-	
-	@Bean //This methos is not nescessarily put here but elsewhere with Class mark by @Configuration
-	@ConfigurationProperties(prefix = "droid") //noted: @SpringBootApplication includes @Configuration in it
-	Droid createDroid() {
-		LOGGER.info("[HENRY-LOG] - createDroid() START!\n");
-		return new Droid();
-	}
-
-
 }
 
 //moved model to a seperated package to easy import/export
