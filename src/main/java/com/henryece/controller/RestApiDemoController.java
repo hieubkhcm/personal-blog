@@ -32,14 +32,14 @@ public class RestApiDemoController {
 	//LOGGER.info("[HENRY-LOG] - This is main()\n");
 
 	private final PostRepository PostRepository;
-	@Autowired // <-- will be auto added by Soring 4.3 or above if class has only one constructor
+	@Autowired // <-- will be auto added by Spring 4.3 when compile or above if class has only one constructor
 	public RestApiDemoController(PostRepository PostRepository) {
 		LOGGER.info("[HENRY-LOG] - RestApiDemoController Constructor called!\n");
 		this.PostRepository = PostRepository;
 	}
 
 	//@RequestMapping(value = "/myPosts", method = RequestMethod.GET) <-- these two annotations are equivalent
-	@GetMapping // <=> @GetMapping("") but not equal to @GetMapping("\") 
+	@GetMapping // <=> @GetMapping("") but not equal to @GetMapping("/") 
 	Iterable<Post> getPosts(){
 		LOGGER.info("[HENRY-LOG] - getPosts called!\n");
 		return PostRepository.findAll();
@@ -51,7 +51,7 @@ public class RestApiDemoController {
 		return PostRepository.findById(id);
 	}
 
-	@PostMapping("") // <=> @PostMapping("") but not equal to @PostMapping("\") 
+	@PostMapping("") // <=> @PostMapping but not equal to @PostMapping("/") 
 	Post postPost(@RequestBody Post Post) {
 		LOGGER.info("[HENRY-LOG] - postPost called!\n");
 		return PostRepository.save(Post);

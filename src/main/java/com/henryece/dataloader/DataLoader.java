@@ -6,12 +6,13 @@ import javax.annotation.PostConstruct;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
-import org.springframework.stereotype.Component;
+//import org.springframework.stereotype.Component;
 
 import com.henryece.model.Post;
 import com.henryece.repository.PostRepository;
 
 //@Component //this annotation helps to separate creating dummy records from RestApiDemoController, so it can be pure API
+//remove the comment out mark will create the table in the database at run time. , You can choose to use .sql. Its better to have options
 public class DataLoader {
 	private static final Logger LOGGER = LogManager.getLogger(DataLoader.class.getName());
 
