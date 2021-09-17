@@ -11,8 +11,7 @@ import org.springframework.stereotype.Component;
 import com.henryece.model.Post;
 import com.henryece.repository.PostRepository;
 
-
-@Component //this annotation helps to separate creating dummy records from RestApiDemoController, so it can be pure API
+//@Component //this annotation helps to separate creating dummy records from RestApiDemoController, so it can be pure API
 public class DataLoader {
 	private static final Logger LOGGER = LogManager.getLogger(DataLoader.class.getName());
 
@@ -30,7 +29,5 @@ public class DataLoader {
 				new Post("2","Bai thu hai"),
 				new Post("3","Bai thu ba"),
 				new Post("4","Bai thu bon")));
-	}
-	
-	
+	}	
 }
