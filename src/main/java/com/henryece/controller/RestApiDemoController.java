@@ -73,6 +73,21 @@ public class RestApiDemoController {
 		//boolean val = c->c.getId().equals(id);
 		PostRepository.deleteById(id);
 		}
+	
+//  todo - create a new class that return string as below to apply thymeleaf
+//	@RequiredArgsConstructor
+//	@Controller
+//	public class PositionController {
+//	    @NonNull
+//	    private final AircraftRepository repository;
+//
+//	    @GetMapping("/aircraft")
+//	    public String getCurrentAircraftPositions(Model model) {
+//	        model.addAttribute("currentPositions", repository.findAll());
+//	        return "positions";
+//	    }
+//	}
+
 }
 
 

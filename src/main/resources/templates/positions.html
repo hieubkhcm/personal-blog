@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Position Report</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+</head>
+<body>
+<script type="text/javascript">
+    window.onload = setupRefresh;
+
+    function setupRefresh() {
+        setTimeout("refreshPage();", 30000); // refresh rate in milliseconds
+    }
+
+    function refreshPage() {
+        window.location = location.href;
+    }
+</script>
+<div class="positionlist" th:unless="${#lists.isEmpty(currentPositions)}">
+
+    <h2>Current Aircraft Positions</h2>
+
+    <table>
+        <thead>
+        <tr>
+            <th>Post #id</th>
+            <th>Content</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="ac : ${currentPositions}">
+            <td th:text="${ac.id}"></td>
+            <td th:text="${ac.name}"></td>
+        </tr>
+        </tbody>
+    </table>
+</div>
+</body>
+</html>
