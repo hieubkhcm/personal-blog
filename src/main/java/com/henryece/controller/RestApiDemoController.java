@@ -25,7 +25,7 @@ import com.henryece.repository.PostRepository;
 
 //Here is the Controller for Post
 @RestController
-@RequestMapping("/Posts") //<--- This is not necessary, mapping to nowhere
+@RequestMapping("/posts") //<--- This is not necessary, mapping to nowhere
 public class RestApiDemoController {
 	private static final Logger LOGGER = LogManager.getLogger(RestApiDemoController.class.getName());
 	//private static final Logger LOGGER = LogManager.getLogger(SpringBootUpAndRunningApplication.class.getName());

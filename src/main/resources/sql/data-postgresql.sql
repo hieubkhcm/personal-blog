@@ -1,0 +1,1 @@
+INSERT INTO comments values ('0001', 'My comment, Hi! this is HenryECE');
