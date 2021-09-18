@@ -2,7 +2,7 @@ package com.henryece.model;
 
 import java.util.UUID;
 
-import javax.persistence.Entity;
+import javax.persistence.Entity; //JPA = Java Persistence API ~ hibernate --> JPA
 import javax.persistence.Id;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
