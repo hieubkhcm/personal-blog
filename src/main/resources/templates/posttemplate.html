@@ -9,26 +9,26 @@
     window.onload = setupRefresh;
 
     function setupRefresh() {
-        setTimeout("refreshPage();", 30000); // refresh rate in milliseconds
+        setTimeout("refreshPage();", 60000); // refresh rate in milliseconds
     }
 
     function refreshPage() {
         window.location = location.href;
     }
 </script>
-<div class="positionlist" th:unless="${#lists.isEmpty(currentPositions)}">
+<div class="postlist" > <!-- th:unless="${#lists.isEmpty(currentPositions)} " -->
 
-    <h2>Current Aircraft Positions</h2>
-
+    <h2>Current Post Content</h2>
+    
     <table>
         <thead>
         <tr>
-            <th>Post #id</th>
-            <th>Content</th>
+            <th>Post #id&emsp;</th>
+            <th>Content&emsp;</th>
         </tr>
         </thead>
         <tbody>
-        <tr th:each="ac : ${currentPositions}">
+        <tr th:each="ac : ${CurrentPostContent}">
             <td th:text="${ac.id}"></td>
             <td th:text="${ac.name}"></td>
         </tr>

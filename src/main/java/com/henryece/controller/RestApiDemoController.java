@@ -25,7 +25,7 @@ import com.henryece.repository.PostRepository;
 
 //Here is the Controller for Post
 @RestController
-@RequestMapping("/posts") //<--- This is not necessary, mapping to nowhere
+@RequestMapping("/posts") //<--- This is for mapping the whole class to /posts, method mapping starts with /posts/...
 public class RestApiDemoController {
 	private static final Logger LOGGER = LogManager.getLogger(RestApiDemoController.class.getName());
 	//private static final Logger LOGGER = LogManager.getLogger(SpringBootUpAndRunningApplication.class.getName());
@@ -73,20 +73,6 @@ public class RestApiDemoController {
 		//boolean val = c->c.getId().equals(id);
 		PostRepository.deleteById(id);
 		}
-	
-//  todo - create a new class that return string as below to apply thymeleaf
-//	@RequiredArgsConstructor
-//	@Controller
-//	public class PositionController {
-//	    @NonNull
-//	    private final AircraftRepository repository;
-//
-//	    @GetMapping("/aircraft")
-//	    public String getCurrentAircraftPositions(Model model) {
-//	        model.addAttribute("currentPositions", repository.findAll());
-//	        return "positions";
-//	    }
-//	}
 
 }
 
